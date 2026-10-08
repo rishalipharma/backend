@@ -1,0 +1,30 @@
+name: GitHub Repository Information
+
+on:
+  push:
+    branches:
+      - develop
+
+  workflow_dispatch:
+
+jobs:
+  repo-info:
+    name: Show Repository Information
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show repository information
+        run: |
+          echo "========================================"
+          echo "GitHub Repository Information"
+          echo "========================================"
+          echo "Repository       : ${{ github.repository }}"
+          echo "Repository ID    : ${{ github.repository_id }}"
+          echo "Owner            : ${{ github.repository_owner }}"
+          echo "Owner ID         : ${{ github.repository_owner_id }}"
+          echo "Branch           : ${{ github.ref_name }}"
+          echo "Ref              : ${{ github.ref }}"
+          echo "Event            : ${{ github.event_name }}"
+          echo "Commit SHA       : ${{ github.sha }}"
+          echo "========================================"
+```
