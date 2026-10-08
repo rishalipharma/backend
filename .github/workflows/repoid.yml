@@ -2,10 +2,7 @@ name: GitHub Repository Information
 
 on:
   push:
-    branches:
-      - develop
-
-  workflow_dispatch:
+    branches: [ develop ]
 
 jobs:
   repo-info:
@@ -27,4 +24,3 @@ jobs:
           echo "Event            : ${{ github.event_name }}"
           echo "Commit SHA       : ${{ github.sha }}"
           echo "========================================"
-```
